@@ -1,5 +1,5 @@
 {% set name = "detecto" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/detecto-{{ version }}.tar.gz
-  sha256: 255f29b8970f14d686f6ea3751d26a3c3d74724a8ed3371eb7ca27967e2e67ab
+  sha256: 85527a07746df6f26c2bb67e4336357cbcc0ee40e1ef369519a8aeb3ebf60300
 
 build:
   number: 0
