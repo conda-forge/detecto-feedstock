@@ -7,28 +7,30 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/detecto-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/detecto-{{ version }}.tar.gz
   sha256: 85527a07746df6f26c2bb67e4336357cbcc0ee40e1ef369519a8aeb3ebf60300
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - matplotlib-base
     - opencv
     - pandas
-    - python >=3.6
+    - python >={{ python_min }}
     - pytorch
     - torchvision
     - tqdm
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - detecto
     - detecto.tests
